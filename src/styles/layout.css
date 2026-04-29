@@ -142,9 +142,36 @@ footer::before {
 
 /* MOBILE LAYOUT */
 @media (max-width: 900px) {
-  nav { padding: 24px; }
-  nav.scrolled { padding: 16px 24px; }
-  .nav-links { display: none; }
+  nav { padding: 15px 5%; }
+  .nav-links { display: none; } /* In un secondo momento andrebbe aggiunto un menu burger */
+
+  /* HERO */
+  #hero { padding: 120px 5% 60px; text-align: center; }
+  .hero-title { font-size: 2.8rem; line-height: 1.1; }
+  .hero-sub { font-size: 1rem; margin: 20px auto; }
+  .hero-actions { flex-direction: column; gap: 15px; align-items: center; }
+  .btn-primary { width: 100%; justify-content: center; }
+  .hero-counter { position: static; margin-top: 40px; justify-content: center; }
+
+  /* SERVIZI */
+  .section-header { flex-direction: column; text-align: center; gap: 20px; }
+  .services-grid { grid-template-columns: 1fr; gap: 20px; }
+  .service-card { padding: 30px; }
+
+  /* STATS */
+  .stats-band { flex-direction: column; gap: 40px; padding: 60px 5%; }
+  .stat-num { font-size: 2.5rem; }
+
+  /* PROCESSO */
+  .process-steps { grid-template-columns: 1fr; gap: 40px; }
+  .step::after { display: none; } /* Rimuove eventuali linee di connessione orizzontali */
+
+  /* CONTATTI */
+  .contact-direct { flex-direction: column; gap: 20px; }
+  .contact-link { padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+
+  /* CURSOR - Disattivato su Mobile (non esiste l'hover) */
+  #cursor, #cursorRing { display: none !important; }
   #hero { padding: 0 24px 48px; }
   #servizi, #reel, #lavori, #processo, #about, #contatti { padding-left: 24px; padding-right: 24px; padding-top: 100px; padding-bottom: 100px; }
   #about { grid-template-columns: 1fr; gap: 64px; }
