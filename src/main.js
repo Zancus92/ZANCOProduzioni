@@ -5,6 +5,7 @@ import { initCounters } from './js/counter.js';
 import { initModal } from './js/modal.js';
 import { initForm } from './js/form.js';
 import { initNav } from './js/nav.js';
+import { Analytics } from "@vercel/analytics/next"
 
 document.addEventListener('DOMContentLoaded', () => {
   initCursor();
@@ -13,4 +14,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initModal();
   initForm();
   initNav();
+  Analytics();
 });
