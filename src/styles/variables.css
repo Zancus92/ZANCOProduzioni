@@ -1,0 +1,22 @@
+:root {
+  --black: #050505;
+  --white: #f8f8f8;
+  --cream: #e0e0e0;
+  
+  /* Primary Accent: Electric Cyan to Violet */
+  --accent: #00f2fe;
+  --accent-glow: rgba(0, 242, 254, 0.4);
+  --accent2: #4facfe;
+  --accent-purple: #9b51e0;
+  
+  --gray: #111111;
+  --mid: #333333;
+  --card-bg: rgba(17, 17, 17, 0.7);
+  
+  --font-display: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+
+  --nav-blur: blur(12px);
+  --nav-bg: rgba(5, 5, 5, 0.6);
+}

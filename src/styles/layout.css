@@ -1,0 +1,152 @@
+/* NAV */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 48px;
+  transition: padding 0.4s cubic-bezier(0.19, 1, 0.22, 1), background 0.4s, backdrop-filter 0.4s, border-bottom 0.4s;
+  border-bottom: 1px solid transparent;
+}
+nav.scrolled {
+  padding: 16px 48px;
+  background: var(--nav-bg);
+  backdrop-filter: var(--nav-blur);
+  -webkit-backdrop-filter: var(--nav-blur);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--white);
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+}
+.logo span { 
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.nav-links {
+  display: flex;
+  gap: 48px;
+  list-style: none;
+  position: relative;
+  z-index: 1;
+}
+.nav-links a {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--white);
+  text-decoration: none;
+  opacity: 0.6;
+  transition: opacity 0.3s, color 0.3s;
+  position: relative;
+  padding: 8px 0;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  transition: width 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  box-shadow: 0 0 8px var(--accent-glow);
+}
+.nav-links a:hover { opacity: 1; color: var(--white); }
+.nav-links a:hover::after { width: 100%; }
+/* HERO */
+#hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 48px 64px;
+  overflow: hidden;
+}
+
+/* SECTIONS PADDING */
+#servizi, #processo, #lavori, #about, #contatti, #reel {
+  padding: 160px 48px;
+  position: relative;
+}
+
+#reel { padding-bottom: 160px; }
+
+/* ABOUT */
+#about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 120px;
+  align-items: center;
+  background: var(--black);
+}
+
+/* FOOTER */
+footer {
+  padding: 64px 48px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--black);
+  position: relative;
+  overflow: hidden;
+}
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 50%; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-glow), transparent);
+}
+.footer-logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: 0.15em;
+  color: var(--white);
+  opacity: 0.4;
+  font-weight: 700;
+}
+.footer-copy {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(242,237,232,0.3);
+}
+.footer-socials {
+  display: flex;
+  gap: 32px;
+}
+.social-link {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(242,237,232,0.4);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.social-link:hover { color: var(--accent); text-shadow: 0 0 8px var(--accent-glow); }
+
+/* MOBILE LAYOUT */
+@media (max-width: 900px) {
+  nav { padding: 24px; }
+  nav.scrolled { padding: 16px 24px; }
+  .nav-links { display: none; }
+  #hero { padding: 0 24px 48px; }
+  #servizi, #reel, #lavori, #processo, #about, #contatti { padding-left: 24px; padding-right: 24px; padding-top: 100px; padding-bottom: 100px; }
+  #about { grid-template-columns: 1fr; gap: 64px; }
+  footer { flex-direction: column; gap: 32px; text-align: center; }
+}
