@@ -142,40 +142,131 @@ footer::before {
 
 /* MOBILE LAYOUT */
 @media (max-width: 900px) {
-  nav { padding: 15px 5%; }
-  .nav-links { display: none; } /* In un secondo momento andrebbe aggiunto un menu burger */
+  /* 1. SPAZIATURA GENERALE */
+  section {
+    padding: 80px 6% !important; /* Più respiro ai lati */
+  }
 
-  /* HERO */
-  #hero { padding: 120px 5% 60px; text-align: center; }
-  .hero-title { font-size: 2.8rem; line-height: 1.1; }
-  .hero-sub { font-size: 1rem; margin: 20px auto; }
-  .hero-actions { flex-direction: column; gap: 15px; align-items: center; }
-  .btn-primary { width: 100%; justify-content: center; }
-  .hero-counter { position: static; margin-top: 40px; justify-content: center; }
+  /* 2. HEADER & NAV (Effetto Glassmorphism) */
+  nav {
+    height: 70px;
+    background: rgba(8, 8, 8, 0.8) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 0 6% !important;
+  }
 
-  /* SERVIZI */
-  .section-header { flex-direction: column; text-align: center; gap: 20px; }
-  .services-grid { grid-template-columns: 1fr; gap: 20px; }
-  .service-card { padding: 30px; }
+  .nav-links { display: none; } /* Nascondi link testuali inutili */
 
-  /* STATS */
-  .stats-band { flex-direction: column; gap: 40px; padding: 60px 5%; }
-  .stat-num { font-size: 2.5rem; }
+  .nav-cta {
+    padding: 10px 18px !important;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+  }
 
-  /* PROCESSO */
-  .process-steps { grid-template-columns: 1fr; gap: 40px; }
-  .step::after { display: none; } /* Rimuove eventuali linee di connessione orizzontali */
+  /* 3. HERO SECTION (Punchy & Centered) */
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px !important;
+  }
 
-  /* CONTATTI */
-  .contact-direct { flex-direction: column; gap: 20px; }
-  .contact-link { padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .hero-title {
+    font-size: clamp(2.5rem, 10vw, 3.5rem) !important;
+    line-height: 1.0;
+    text-align: center;
+  }
 
-  /* CURSOR - Disattivato su Mobile (non esiste l'hover) */
-  #cursor, #cursorRing { display: none !important; }
-  #hero { padding: 0 24px 48px; }
-  #servizi, #reel, #lavori, #processo, #about, #contatti { padding-left: 24px; padding-right: 24px; padding-top: 100px; padding-bottom: 100px; }
-  #about { grid-template-columns: 1fr; gap: 64px; }
-  footer { flex-direction: column; gap: 32px; text-align: center; }
+  .hero-sub {
+    font-size: 1.1rem !important;
+    line-height: 1.6;
+    margin: 25px 0 35px !important;
+    opacity: 0.8;
+    max-width: 100%;
+  }
+
+  .hero-actions {
+    width: 100%;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn-primary {
+    width: 100%;
+    height: 60px; /* Più grande per il pollice */
+    justify-content: center;
+    font-size: 1rem;
+  }
+
+  /* 4. SERVIZI (Cards come App) */
+  .section-title {
+    font-size: 2.2rem !important;
+    margin-bottom: 20px;
+  }
+
+  .services-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .service-card {
+    padding: 32px 24px !important;
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+  }
+
+  .service-name { font-size: 1.4rem !important; }
+
+  .service-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .tag { font-size: 0.7rem !important; padding: 4px 10px !important; }
+
+  /* 5. STATS (Grid 2x2 invece di lista lunga) */
+  .stats-band {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 40px 6% !important;
+    background: #0a0a0a;
+  }
+
+  .stat-num { font-size: 2rem !important; }
+  .stat-label { font-size: 0.7rem; text-transform: uppercase; opacity: 0.5; }
+
+  /* 6. PROCESSO (Timeline semplificata) */
+  .process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    padding-left: 20px;
+    margin-left: 10px;
+  }
+
+  .step-dot { left: -26px !important; }
+
+  /* 7. CONTATTI */
+  .contact-link {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 12px;
+    margin-bottom: 10px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .contact-link-val { font-size: 1.1rem !important; }
+
+  /* RIMOZIONE ELEMENTI DISTURBO */
+  #cursor, #cursorRing, .scroll-line { display: none !important; }
   .whatsapp-btn {
     bottom: 20px;
     right: 20px;
